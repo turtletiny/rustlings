@@ -8,12 +8,8 @@ fn capitalize_first(input: &str) -> String {
     match chars.next() {
         None => String::new(),
         Some(first) => {
-            let mut s = String::from(first.to_ascii_uppercase());
-            while let Some(letter) = chars.next() {
-                s.push(letter);
-            }
-            s
-        }
+            format!("{}{}",first.to_ascii_uppercase(), &input[1..])
+        },
     }
 }
 
